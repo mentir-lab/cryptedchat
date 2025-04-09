@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "node-rsa": "^1.1.1",
+    "swearjar": "^0.2.0",
+    "sweetalert": "^2.1.2"
+  }
+}

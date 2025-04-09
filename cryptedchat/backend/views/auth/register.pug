@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title CryptedChat
+    link(rel="stylesheet", href='/stylesheets/style.css')
+  body
+  - const numbers = Array(50).fill(0).map((v, i) => i);
+    .container
+      .login-box
+        h2 Registration
+        form#registerForm
+          .input-box
+            input(type="email", name="email", required)
+            label Email
+          .input-box
+            input(type="text", name="nick", required)
+            label NickName
+          .input-box
+            input(type="password", name="password",  required)
+            label Password
+          .input-box
+            input(type="password", required)
+            label Confirm password  
+          button.btn(type="submit") Register
+          .signup-link
+            a(href="/login") Signup
+        div#response
+      script(type="module" src="/js/auth.js")
