@@ -60,13 +60,20 @@ exports.encryptMessage = async (req, res) => {
     }
 };
 exports.decryptMessage = async (req, res) => {
+
     try {
         const { onkey, key, user, message, iv } = req.body;
+        console.log('message1' + message.encryptedData + " " + message.iv)
+        console.log('privatekey1' + key)
+        console.log('simmetry1' + onkey)
+        console.log('uid1' + user)
+        console.log('vector1' + iv)
         const pkey = new NodeRSA(decryptPrivateKey(iv, key, user));
         const mykey = pkey.decrypt(onkey, 'utf8')
+        console.log('decryptedkey' + mykey)
         return res.status(200).json({
             success: true,
-            message: decryptPrivateKey(iv, message, mykey)
+            message: decryptPrivateKey(message.iv, message.encryptedData, mykey)
         })
     } catch (error) {
         console.log(error)

@@ -18,10 +18,8 @@ const chatMessages = document.querySelector('#chat_messages');
 const chatBoxBody = document.querySelector('#chat_box_body');
 
 let messagesRef;
+let userRef;
 let currentUser = '';
-let publicKey = ''
-let privateKey = ''
-let iv = null
 const profile = {
     'my': {
         'name': 'My profile',
@@ -55,7 +53,27 @@ function showEnglishWarning() {
         }
     }
 }
+async function getKeys() {
+    if (!auth.currentUser) {
+        console.log('Пользователь не аутентифицирован');
+        return null; // Возвращаем null, если пользователь не аутентифицирован
+    }
 
+    const userRef = ref(db, 'users/' + auth.currentUser.uid);
+    const snapshot = await get(userRef);
+    if (snapshot.exists()) {
+        const userData = snapshot.val();
+
+        return {
+            key: userData.key,
+            onkey: userData.onkey,
+            iv: userData.iv
+        }
+    } else {
+        console.log('Данные пользователя не найдены');
+        return null; // Возвращаем null, если данные не найдены
+    }
+}
 function showSwearWarning() {
     const modal = document.getElementById('englishModal');
     const btn = document.getElementById('confirmEnglish');
@@ -81,57 +99,76 @@ async function initChat(user) {
         const response = await fetch('/api/rsa/createKeys', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-            user: currentUser
-            })
+            body: JSON.stringify({ user: currentUser })
         });
-
         const result = await response.json();
-        console.log('ok');
-        if (result.success) {
-            console.log('всё ок')
-        } else {
-            console.log('всё не ок')
-          
-        }
-        userRef = ref(db,'users/' + auth.currentUser.uid)
-        userRef.once('value').then((snapshot) => {
-            if (snapshot.exists()) {
-                const userData = snapshot.val(); // Получаем данные пользователя
-
-                // Теперь вы можете считывать индивидуальные поля пользователя
-               const pivo =userData.iv // Поле age
-                // Добавьте здесь дополнительные поля по необходимости
-
-                // Вывод данных в консоль (или используйте по вашему усмотрению)
-          
-                // Используйте переменные по своему усмотрению
-            } else {
-                console.log('Данные пользователя не найдены');
-            }
-        }).catch((error) => {
-            console.error('Ошибка получения данных:', error);
-        });
+        console.log('RSA Keys:', result.success ? 'OK' : 'Failed');
     } catch (error) {
-        console.log('всё сломалось')
+        console.error('RSA Keygen Error:', error);
     }
-    messagesRef = ref(db, 'messages');
 
-    // Очищаем чат перед загрузкой новых сообщений
-    chatMessages.innerHTML = '';
+    messagesRef = ref(db, 'messages');
+    const keys = await getKeys();
+
+    // Храним ID уже отображённых сообщений, чтобы не рендерить их повторно
+    const displayedMessageIds = new Set();
 
     // Подписываемся на изменения в базе данных
-    onValue(messagesRef, (snapshot) => {
-        chatMessages.innerHTML = ''; // Очищаем перед обновлением
+    onValue(messagesRef, async (snapshot) => {
+        const messagesData = snapshot.val();
+        if (!messagesData) return;
 
-        snapshot.forEach((childSnapshot) => {
-            const message = childSnapshot.val();
-            renderMessage(message);
-        });
+        // Получаем все сообщения в виде массива [id, message]
+        const messageEntries = Object.entries(messagesData);
 
+        // Фильтруем только новые сообщения (которые ещё не отображены)
+        const newMessages = messageEntries.filter(([id]) => !displayedMessageIds.has(id));
+
+        if (newMessages.length === 0) return; // Если новых сообщений нет, выходим
+
+        // Декодируем новые сообщения
+        const decryptedMessages = await Promise.all(
+            newMessages.map(async ([messageId, message]) => {
+                try {
+                    const response = await fetch('/api/rsa/decrypt', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            message: message.text,
+                            key: keys.key,
+                            onkey: keys.onkey,
+                            user: auth.currentUser.uid,
+                            iv: keys.iv
+                        })
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        return { ...message, id: messageId, text: result.message }; // Добавляем id для отслеживания
+                    } else {
+                        console.error('Decryption failed for message:', messageId);
+                        return null;
+                    }
+                } catch (error) {
+                    console.error('Decryption error:', error);
+                    return null;
+                }
+            })
+        );
+
+        // Добавляем только успешно декодированные сообщения
+        decryptedMessages
+            .filter(msg => msg !== null)
+            .forEach(msg => {
+                renderMessage(msg); // Рендерим сообщение
+                displayedMessageIds.add(msg.id); // Запоминаем, что оно уже отображено
+            });
+
+        // Прокручиваем чат вниз
         chatBoxBody.scrollTop = chatBoxBody.scrollHeight;
     });
 }
+
+
 
 // ----- Рендеринг сообщений ----- //
 function renderMessage(message) {
@@ -170,40 +207,30 @@ async function sendMessage() {
 ;
 
     try {
-        // Получаем ссылку на пользователя
-        const userRef = ref(db, 'users/' + auth.currentUser.uid);
-        const snapshot = await get(userRef); // Используем await здесь
+        // Получаем ссылку на пользователя // Используем await здесь
+        const keys = await getKeys()
+        const response = await fetch('/api/rsa/encrypt', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                message: messageText,
+                key: keys.key,
+                onkey: keys.onkey,
+                user: auth.currentUser.uid,
+                iv: keys.iv
+            })
+        });
 
-        if (snapshot.exists()) {
-            const userData = snapshot.val(); // Получаем данные пользователя
-
-            // Теперь вы можете считывать индивидуальные поля пользователя
-            const response = await fetch('/api/rsa/encrypt', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    message: messageText,
-                    key: userData.key,
-                    onkey: userData.onkey,
-                    user: auth.currentUser.uid,
-                    iv: userData.iv
-                })
+        const result = await response.json();
+        if (result.success) {
+            await push(messagesRef, {
+                text: result.message,
+                uid: currentUser.uid,
+                displayName: currentUser.displayName || 'Anonymous',
+                timestamp: serverTimestamp()
             });
-
-            const result = await response.json();
-            if (result.success) {
-                await push(messagesRef, {
-                    text: result.message,
-                    uid: currentUser.uid,
-                    displayName: currentUser.displayName || 'Anonymous',
-                    timestamp: serverTimestamp()
-                });
-            } else {
-                console.log('всё не ок');
-            }
-
         } else {
-            console.log('Данные пользователя не найдены');
+            console.log('всё не ок');
         }
 
         chatInput.value = '';
@@ -260,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('User authenticated:', user.uid);
             try {
                 console.log('Access granted, initializing chat');
-                initChat(user);
+                await initChat(user);
             } catch (error) {
                 console.error('Access verification failed:', error);
                 // Раскомментируйте в продакшене:
