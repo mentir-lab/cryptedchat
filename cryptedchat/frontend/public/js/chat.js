@@ -103,57 +103,57 @@ function showSwearWarning() {
 }
 // Глобальные переменные для управления подписками
 let currentKeys = null;
+ // Флаг первой загрузки
 let unsubscribeChat = null;
-let displayedMessageIds = new Set();
-let isInitialLoad = true; // Флаг первой загрузки
+const displayedMessageIds = new Set();
+let isInitialLoad = true;
+let isProcessing = false; // Флаг для защиты от параллельной обработки
+
 async function initChat(user) {
     currentUser = user;
 
-    // 1. Очистка предыдущей подписки
+    // 1. Полная очистка предыдущей подписки
     if (unsubscribeChat) {
         unsubscribeChat();
-        displayedMessageIds.clear();
+        unsubscribeChat = null;
     }
+    displayedMessageIds.clear();
 
     // 2. Инициализация ключей
-        try {
-            const response = await fetch('/api/rsa/createKeys', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ user: user })
-            });
-            await response.json();
-        } catch (error) {
-            console.error('RSA Keygen Error:', error);
-        }
-    
+    try {
+        const response = await fetch('/api/rsa/createKeys', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ user: user })
+        });
+        await response.json();
+    } catch (error) {
+        console.error('RSA Keygen Error:', error);
+    }
 
-    // 3. Подписка на сообщения
+    // 3. Подписка с защитой от дублирования
     const messagesRef = ref(db, 'messages');
-    currentKeys = await getKeys(); // Получаем ключи один раз перед подпиской
+    currentKeys = await getKeys();
 
     unsubscribeChat = onValue(messagesRef, async (snapshot) => {
-        const messagesData = snapshot.val();
-        if (!messagesData || !currentKeys) return;
-       
-        // Для первой загрузки обрабатываем все сообщения
-        const messagesToProcess = isInitialLoad
-            ? Object.entries(messagesData)
-            : Object.entries(messagesData)
+        if (isProcessing) return;
+        isProcessing = true;
+
+        try {
+            const messagesData = snapshot.val();
+            if (!messagesData || !currentKeys) return;
+
+            // Фильтрация новых сообщений
+            const newMessages = Object.entries(messagesData)
                 .filter(([id]) => !displayedMessageIds.has(id));
 
-        if (messagesToProcess.length === 0) {
-            isInitialLoad = false;
-            return;
-        }
-        
-        // Декодирование
-        const decryptedMessages = await Promise.all(
-            messagesToProcess.map(async ([messageId, message]) => {
-                if (messageId === messagesData.id) {
-                    console.log('Сообщение уже обработано:', messagesData.id);
-                    return;
-                }
+            if (newMessages.length === 0) {
+                isInitialLoad = false;
+                return;
+            }
+
+            // Обработка сообщений
+            for (const [messageId, message] of newMessages) {
                 try {
                     const response = await fetch('/api/rsa/decrypt', {
                         method: 'POST',
@@ -163,29 +163,29 @@ async function initChat(user) {
                             key: currentKeys
                         })
                     });
-                    const result = await response.json();
-                    return result.success
-                        ? { ...message, id: messageId, text: result.message }
-                        : null;
-                } catch (error) {
-                    console.error('Decrypt error:', error);
-                    return null;
-                }
-            })
-        );
-        const unicdecryptedMessages = Array.from(new Map(decryptedMessages.map(item => [item.id, item])).values());
-        // Отображение
-        unicdecryptedMessages.filter(Boolean).forEach(msg => {
-            renderMessage(msg);
-            displayedMessageIds.add(msg.id);
-        });
 
-        isInitialLoad = false;
-        chatBoxBody.scrollTop = chatBoxBody.scrollHeight;
+                    const result = await response.json();
+                    if (result.success) {
+                        renderMessage({
+                            ...message,
+                            id: messageId,
+                            text: result.message
+                        });
+                        displayedMessageIds.add(messageId);
+                    }
+                } catch (error) {
+                    console.error('Ошибка дешифровки:', error);
+                }
+            }
+
+            chatBoxBody.scrollTop = chatBoxBody.scrollHeight;
+        } finally {
+            isProcessing = false;
+            isInitialLoad = false;
+        }
     });
 }
 
-// Функция очистки
 function cleanupChat() {
     if (unsubscribeChat) {
         unsubscribeChat();
@@ -194,6 +194,9 @@ function cleanupChat() {
     displayedMessageIds.clear();
     isInitialLoad = true;
 }
+
+// Функция очистки
+
 
 // Функция для ручной очистки
 
