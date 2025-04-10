@@ -173,9 +173,9 @@ async function initChat(user) {
                 }
             })
         );
-
+        const unicdecryptedMessages = Array.from(new Map(decryptedMessages.map(item => [item.id, item])).values());
         // Отображение
-        decryptedMessages.filter(Boolean).forEach(msg => {
+        unicdecryptedMessages.filter(Boolean).forEach(msg => {
             renderMessage(msg);
             displayedMessageIds.add(msg.id);
         });
