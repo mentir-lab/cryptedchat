@@ -31,6 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
                 console.log('ok');
                 if (result.success) {
+                    try {
+                        const response = await fetch('/api/rsa/createKeys', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ user: user })
+                        });
+                        await response.json();
+                    } catch (error) {
+                        console.error('RSA Keygen Error:', error);
+                    }
                     window.location.href = '/login';
                     e.target.reset();
                 } else {

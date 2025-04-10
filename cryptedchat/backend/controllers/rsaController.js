@@ -38,18 +38,10 @@ const decryptPrivateKey = (iv, encryptedData, password) => { // Извлечение IV и 
 
 exports.encryptMessage = async (req, res) => {
     try {
-        const { message, key, onkey, user, iv } = req.body;
-        console.log('message1' + message)
-        console.log('privatekey1' + key)
-        console.log('simmetry1' + onkey)
-        console.log('uid1' + user)
-        console.log('vector1' + iv)
-
-        const pkey = new NodeRSA(decryptPrivateKey(iv, key, user));
-        const mykey = pkey.decrypt(onkey, 'utf8')
+        const { message, key } = req.body;
         return res.status(200).json({
             success: true,
-            message: encryptPrivateKey(message, mykey)
+            message: encryptPrivateKey(message, key)
         })
     } catch(error) {
         console.log(error)
@@ -59,21 +51,30 @@ exports.encryptMessage = async (req, res) => {
         });
     }
 };
+exports.decryptkey = async (req, res) => {
+    try {
+        const { onkey, key, user, iv } = req.body;
+        const pkey = new NodeRSA(decryptPrivateKey(iv, key, user));
+        const mykey = pkey.decrypt(onkey, 'utf8')
+        return res.status(200).json({
+            success: true,
+            key: mykey
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({
+            success: false,
+            error: error.message
+        });
+    }
+}
 exports.decryptMessage = async (req, res) => {
 
     try {
-        const { onkey, key, user, message, iv } = req.body;
-        console.log('message1' + message.encryptedData + " " + message.iv)
-        console.log('privatekey1' + key)
-        console.log('simmetry1' + onkey)
-        console.log('uid1' + user)
-        console.log('vector1' + iv)
-        const pkey = new NodeRSA(decryptPrivateKey(iv, key, user));
-        const mykey = pkey.decrypt(onkey, 'utf8')
-        console.log('decryptedkey' + mykey)
+        const { message, key } = req.body;
         return res.status(200).json({
             success: true,
-            message: decryptPrivateKey(message.iv, message.encryptedData, mykey)
+            message: decryptPrivateKey(message.iv, message.encryptedData, key)
         })
     } catch (error) {
         console.log(error)
@@ -97,11 +98,6 @@ exports.createKeys = async (req, res) => {
                     const public = key.exportKey('public')
                     // Сохранение приватного и публичного ключей                   
                     const encryptedKey = encryptPrivateKey(key.exportKey('private'), user.uid)
-                    console.log('publickey' + key.exportKey('public'))
-                    console.log('privatekey' + encryptedKey.encryptedData)
-                    console.log('simmetry' + key.encrypt(keyPem, 'base64'))
-                    console.log('uid' + user.uid)
-                    console.log('vector' + encryptedKey.iv)
                     // Документ не существует, создаем новый
                     const newUserData = {
                         publicKey: key.exportKey('public'), // Пример информации о создании

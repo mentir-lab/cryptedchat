@@ -167,48 +167,76 @@ h2 {
             text-decoration: underline;
         }
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
+    html {
+        font-size: 16px; /* Базовый размер шрифта */
+    }
+
+    body {
+        -webkit-text-size-adjust: 100%; /* Фикс для iOS */
+    }
+
     .container {
-        width: 80%; /* Увеличиваем ширину контейнера на мобильных устройствах */
-        height: auto; /* Сделаем высоту авто */
+        width: 95% !important; /* Ещё больше места */
+        padding: 15px !important;
+        min-height: 100vh; /* На всю высоту экрана */
+        box-sizing: border-box;
     }
 
     .login-box {
-        width: 100%; /* Задаем ширину формы 100% */
-        padding: 20px; /* Добавляем отступы */
+        width: 100% !important;
+        padding: 15px !important;
     }
 
     h2 {
-        font-size: 1.5em; /* Уменьшаем размер заголовка */
+        font-size: 1.8rem !important; /* Увеличиваем заголовок */
+        margin-bottom: 1.5rem !important;
+    }
+
+    .input-box {
+        margin-bottom: 1.5rem !important;
+    }
+
+        .input-box input {
+            height: 50px !important; /* Выше поля ввода */
+            font-size: 1rem !important;
+            padding: 0 15px !important;
+        }
+
+    .btn {
+        height: 50px !important;
+        font-size: 1.1rem !important;
+    }
+
+    .forgot-password a,
+    .signup-link a {
+        font-size: 1rem !important;
+        padding: 10px 0 !important;
+        display: block !important;
+    }
+
+    .error-message {
+        width: 100% !important;
+        padding: 15px !important;
+        box-sizing: border-box;
+    }
+
+    .error-text {
+        font-size: 1rem !important;
+    }
+}
+
+/* Дополнительные стили для очень маленьких экранов */
+@media (max-width: 480px) {
+    html {
+        font-size: 18px; /* Ещё больше шрифт */
     }
 
     .input-box input {
-        height: 40px; /* Уменьшаем высоту поля ввода */
-        font-size: 0.9em; /* Уменьшаем размер шрифта */
+        height: 55px !important;
     }
 
     .btn {
-        height: 40px; /* Соответствующая высота для кнопки */
-    }
-
-    .forgot-password a, .signup-link a {
-        font-size: 0.9em; /* Уменьшаем размер шрифта для ссылок */
-    }
-    .container span {
-        display: none; /* Скрываем элемент span */
-    }
-    .error-message {
-        background-color: #fce4e4;
-        border: 1px solid #fcc2c3;
-        float: left;
-        padding: 20px 30px;
-    }
-    .error-text {
-        color: #cc0033;
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 13px;
-        font-weight: bold;
-        line-height: 20px;
-        text-shadow: 1px 1px rgba(250,250,250,.3);
+        height: 55px !important;
     }
 }

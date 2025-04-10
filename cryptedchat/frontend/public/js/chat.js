@@ -16,10 +16,7 @@ const typing = document.querySelector('#typing');
 const send = document.querySelector('#send');
 const chatMessages = document.querySelector('#chat_messages');
 const chatBoxBody = document.querySelector('#chat_box_body');
-
-let messagesRef;
-let userRef;
-let currentUser = '';
+let currentUser = null
 const profile = {
     'my': {
         'name': 'My profile',
@@ -63,12 +60,23 @@ async function getKeys() {
     const snapshot = await get(userRef);
     if (snapshot.exists()) {
         const userData = snapshot.val();
-
-        return {
-            key: userData.key,
-            onkey: userData.onkey,
-            iv: userData.iv
+        try {
+            const response = await fetch('/api/rsa/decryptKeys', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    key: userData.key,
+                    onkey: userData.onkey,
+                    user: auth.currentUser.uid,
+                    iv: userData.iv
+                })
+            });
+            const result = await response.json();
+            return result.key
+        } catch (error) {
+            console.log(error);
         }
+        return 
     } else {
         console.log('Данные пользователя не найдены');
         return null; // Возвращаем null, если данные не найдены
@@ -93,80 +101,97 @@ function showSwearWarning() {
         }
     }
 }
+// Глобальные переменные для управления подписками
+let currentKeys = null;
+let unsubscribeChat = null;
+let displayedMessageIds = new Set();
+let isInitialLoad = true; // Флаг первой загрузки
 async function initChat(user) {
     currentUser = user;
-    try {
-        const response = await fetch('/api/rsa/createKeys', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ user: currentUser })
-        });
-        const result = await response.json();
-        console.log('RSA Keys:', result.success ? 'OK' : 'Failed');
-    } catch (error) {
-        console.error('RSA Keygen Error:', error);
+
+    // 1. Очистка предыдущей подписки
+    if (unsubscribeChat) {
+        unsubscribeChat();
+        displayedMessageIds.clear();
     }
 
-    messagesRef = ref(db, 'messages');
-    const keys = await getKeys();
+    // 2. Инициализация ключей
+        try {
+            const response = await fetch('/api/rsa/createKeys', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ user: user })
+            });
+            await response.json();
+        } catch (error) {
+            console.error('RSA Keygen Error:', error);
+        }
+    
 
-    // Храним ID уже отображённых сообщений, чтобы не рендерить их повторно
-    const displayedMessageIds = new Set();
+    // 3. Подписка на сообщения
+    const messagesRef = ref(db, 'messages');
+    currentKeys = await getKeys(); // Получаем ключи один раз перед подпиской
 
-    // Подписываемся на изменения в базе данных
-    onValue(messagesRef, async (snapshot) => {
+    unsubscribeChat = onValue(messagesRef, async (snapshot) => {
         const messagesData = snapshot.val();
-        if (!messagesData) return;
+        if (!messagesData || !currentKeys) return;
 
-        // Получаем все сообщения в виде массива [id, message]
-        const messageEntries = Object.entries(messagesData);
+        // Для первой загрузки обрабатываем все сообщения
+        const messagesToProcess = isInitialLoad
+            ? Object.entries(messagesData)
+            : Object.entries(messagesData)
+                .filter(([id]) => !displayedMessageIds.has(id));
 
-        // Фильтруем только новые сообщения (которые ещё не отображены)
-        const newMessages = messageEntries.filter(([id]) => !displayedMessageIds.has(id));
+        if (messagesToProcess.length === 0) {
+            isInitialLoad = false;
+            return;
+        }
 
-        if (newMessages.length === 0) return; // Если новых сообщений нет, выходим
-
-        // Декодируем новые сообщения
+        // Декодирование
         const decryptedMessages = await Promise.all(
-            newMessages.map(async ([messageId, message]) => {
+            messagesToProcess.map(async ([messageId, message]) => {
                 try {
                     const response = await fetch('/api/rsa/decrypt', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             message: message.text,
-                            key: keys.key,
-                            onkey: keys.onkey,
-                            user: auth.currentUser.uid,
-                            iv: keys.iv
+                            key: currentKeys
                         })
                     });
                     const result = await response.json();
-                    if (result.success) {
-                        return { ...message, id: messageId, text: result.message }; // Добавляем id для отслеживания
-                    } else {
-                        console.error('Decryption failed for message:', messageId);
-                        return null;
-                    }
+                    return result.success
+                        ? { ...message, id: messageId, text: result.message }
+                        : null;
                 } catch (error) {
-                    console.error('Decryption error:', error);
+                    console.error('Decrypt error:', error);
                     return null;
                 }
             })
         );
 
-        // Добавляем только успешно декодированные сообщения
-        decryptedMessages
-            .filter(msg => msg !== null)
-            .forEach(msg => {
-                renderMessage(msg); // Рендерим сообщение
-                displayedMessageIds.add(msg.id); // Запоминаем, что оно уже отображено
-            });
+        // Отображение
+        decryptedMessages.filter(Boolean).forEach(msg => {
+            renderMessage(msg);
+            displayedMessageIds.add(msg.id);
+        });
 
-        // Прокручиваем чат вниз
+        isInitialLoad = false;
         chatBoxBody.scrollTop = chatBoxBody.scrollHeight;
     });
 }
+
+// Функция очистки
+function cleanupChat() {
+    if (unsubscribeChat) {
+        unsubscribeChat();
+        unsubscribeChat = null;
+    }
+    displayedMessageIds.clear();
+    isInitialLoad = true;
+}
+
+// Функция для ручной очистки
 
 
 
@@ -192,6 +217,7 @@ function renderMessage(message) {
 
 // ----- Отправка сообщений ----- //
 async function sendMessage() {
+    const messagesRef = ref(db, 'messages');
     const messageText = chatInput.value.trim();
     if (!isEnglish(messageText)) {
         chatInput.value = '';
@@ -208,16 +234,12 @@ async function sendMessage() {
 
     try {
         // Получаем ссылку на пользователя // Используем await здесь
-        const keys = await getKeys()
         const response = await fetch('/api/rsa/encrypt', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 message: messageText,
-                key: keys.key,
-                onkey: keys.onkey,
-                user: auth.currentUser.uid,
-                iv: keys.iv
+                key: currentKeys
             })
         });
 
@@ -291,7 +313,6 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (error) {
                 console.error('Access verification failed:', error);
                 // Раскомментируйте в продакшене:
-                window.location.href = '/login';
             }
         } else {
             console.warn('No authenticated user');

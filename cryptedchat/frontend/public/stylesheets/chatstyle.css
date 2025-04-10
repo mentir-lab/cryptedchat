@@ -290,3 +290,53 @@ h3 > small {
 .chat-box-header {
     position: relative;
 }
+
+/* Оптимизация для очень маленьких экранов */
+@media (max-width: 768px) {
+    :root {
+        --standard-padding: 15px 10px;
+        --font-size: 14px;
+    }
+
+    .chat-box-header,
+    .chat-box-footer {
+        padding: 10px;
+    }
+
+    #chat_input {
+        height: 45px;
+    }
+}
+
+/* Остальные стили (сообщения, кнопки и т.д.) остаются без изменений */
+.message {
+    width: 80%;
+    padding: var(--standard-padding);
+    margin: 2px 0;
+    overflow: hidden;
+    border-radius: var(--standard-radius);
+}
+
+.my-message {
+    color: #fff;
+    background-color: #006ae3;
+    align-self: flex-end;
+}
+
+.other-message {
+    background-color: #e2e2e2;
+}
+
+#chat_input {
+    flex: 1;
+    height: 40px;
+    max-height: 120px;
+    padding: 10px 15px;
+    border-radius: var(--standard-radius);
+    border: 1px solid #ddd;
+}
+
+#send {
+    margin-left: 10px;
+    padding: 0 15px;
+}
