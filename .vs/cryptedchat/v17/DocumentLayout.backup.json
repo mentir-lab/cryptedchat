@@ -3,6 +3,29 @@
   "WorkspaceRootPath": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\Downloads\\cryptedbase-36c89-firebase-adminsdk-fbsvc-0629c16773.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\database\\database.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\backend\\database\\database.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\cryptedchat.esproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\cryptedchat.esproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\js\\chat.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\frontend\\public\\js\\chat.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\controllers\\rsacontroller.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\backend\\controllers\\rsacontroller.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\js\\auth.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\frontend\\public\\js\\auth.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -11,20 +34,8 @@
       "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\backend\\routes\\auth.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\controllers\\rsacontroller.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\backend\\controllers\\rsacontroller.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\js\\chat.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\frontend\\public\\js\\chat.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\controllers\\authcontroller.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\backend\\controllers\\authcontroller.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\database\\database.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\backend\\database\\database.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\js\\firebase.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -45,14 +56,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\views\\chat\\chat.pug||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\backend\\views\\chat\\chat.pug||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\database\\serviceaccountkeys.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\backend\\database\\serviceaccountkeys.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\js\\auth.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\frontend\\public\\js\\auth.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -89,10 +92,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\views\\auth\\login.pug||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\backend\\views\\auth\\login.pug||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|c:\\users\\\u0432\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\cryptedchat.esproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{695B4567-55AD-4511-A3FC-686F10FF1F60}|cryptedchat\\cryptedchat.esproj|solutionrelative:cryptedchat\\cryptedchat.esproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -111,49 +110,37 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "cryptedbase-36c89-firebase-adminsdk-fbsvc-0629c16773.json",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\Downloads\\cryptedbase-36c89-firebase-adminsdk-fbsvc-0629c16773.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\Downloads\\cryptedbase-36c89-firebase-adminsdk-fbsvc-0629c16773.json",
+              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\Downloads\\cryptedbase-36c89-firebase-adminsdk-fbsvc-0629c16773.json",
+              "RelativeToolTip": "..\\..\\..\\Downloads\\cryptedbase-36c89-firebase-adminsdk-fbsvc-0629c16773.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-09T14:57:20.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "package.json",
               "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\package.json",
               "RelativeDocumentMoniker": "cryptedchat\\package.json",
               "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\package.json",
               "RelativeToolTip": "cryptedchat\\package.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-09T00:18:16.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T00:18:16.461Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "serviceAccountKeys.json",
-              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\database\\serviceAccountKeys.json",
-              "RelativeDocumentMoniker": "cryptedchat\\backend\\database\\serviceAccountKeys.json",
-              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\database\\serviceAccountKeys.json",
-              "RelativeToolTip": "cryptedchat\\backend\\database\\serviceAccountKeys.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-08T10:41:58.01Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "rsa.js",
-              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\routes\\rsa.js",
-              "RelativeDocumentMoniker": "cryptedchat\\backend\\routes\\rsa.js",
-              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\routes\\rsa.js",
-              "RelativeToolTip": "cryptedchat\\backend\\routes\\rsa.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-08T10:04:56.228Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "rsaController.js",
               "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\controllers\\rsaController.js",
               "RelativeDocumentMoniker": "cryptedchat\\backend\\controllers\\rsaController.js",
               "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\controllers\\rsaController.js",
               "RelativeToolTip": "cryptedchat\\backend\\controllers\\rsaController.js",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADAAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAEsAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-04-08T09:37:15.057Z"
             },
@@ -165,50 +152,26 @@
               "RelativeDocumentMoniker": "cryptedchat\\frontend\\public\\js\\chat.js",
               "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\js\\chat.js",
               "RelativeToolTip": "cryptedchat\\frontend\\public\\js\\chat.js",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAIwLYAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAswKgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-04-07T08:53:47.67Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "auth.js",
-              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\routes\\auth.js",
-              "RelativeDocumentMoniker": "cryptedchat\\backend\\routes\\auth.js",
-              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\routes\\auth.js",
-              "RelativeToolTip": "cryptedchat\\backend\\routes\\auth.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-07T08:40:37.686Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "app.js",
-              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\app.js",
-              "RelativeDocumentMoniker": "cryptedchat\\backend\\app.js",
-              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\app.js",
-              "RelativeToolTip": "cryptedchat\\backend\\app.js",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-07T07:44:10.99Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "database.js",
               "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\database\\database.js",
               "RelativeDocumentMoniker": "cryptedchat\\backend\\database\\database.js",
               "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\database\\database.js",
               "RelativeToolTip": "cryptedchat\\backend\\database\\database.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-07T07:14:11.06Z"
+              "WhenOpened": "2025-04-07T07:14:11.06Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "authController.js",
               "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\controllers\\authController.js",
               "RelativeDocumentMoniker": "cryptedchat\\backend\\controllers\\authController.js",
@@ -220,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "chat.pug",
               "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\views\\chat\\chat.pug",
               "RelativeDocumentMoniker": "cryptedchat\\backend\\views\\chat\\chat.pug",
@@ -232,55 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "firebase.js",
-              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\js\\firebase.js",
-              "RelativeDocumentMoniker": "cryptedchat\\frontend\\public\\js\\firebase.js",
-              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\js\\firebase.js",
-              "RelativeToolTip": "cryptedchat\\frontend\\public\\js\\firebase.js",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAB8AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-07T10:13:13.914Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "key.pem",
-              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\key.pem",
-              "RelativeDocumentMoniker": "cryptedchat\\frontend\\public\\key.pem",
-              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\key.pem",
-              "RelativeToolTip": "cryptedchat\\frontend\\public\\key.pem",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-08T12:43:12.831Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "protectedauth.js",
-              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\middleware\\protectedauth.js",
-              "RelativeDocumentMoniker": "cryptedchat\\backend\\middleware\\protectedauth.js",
-              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\middleware\\protectedauth.js",
-              "RelativeToolTip": "cryptedchat\\backend\\middleware\\protectedauth.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-07T07:56:46.094Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "views.js",
-              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\routes\\views.js",
-              "RelativeDocumentMoniker": "cryptedchat\\backend\\routes\\views.js",
-              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\routes\\views.js",
-              "RelativeToolTip": "cryptedchat\\backend\\routes\\views.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-07T08:40:40.95Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 5,
               "Title": "auth.js",
               "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\js\\auth.js",
               "RelativeDocumentMoniker": "cryptedchat\\frontend\\public\\js\\auth.js",
@@ -292,7 +207,103 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "cryptedchat.esproj",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\cryptedchat.esproj",
+              "RelativeDocumentMoniker": "cryptedchat\\cryptedchat.esproj",
+              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\cryptedchat.esproj",
+              "RelativeToolTip": "cryptedchat\\cryptedchat.esproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-06T12:06:55.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "app.js",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\app.js",
+              "RelativeDocumentMoniker": "cryptedchat\\backend\\app.js",
+              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\app.js",
+              "RelativeToolTip": "cryptedchat\\backend\\app.js",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-07T07:44:10.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "auth.js",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\routes\\auth.js",
+              "RelativeDocumentMoniker": "cryptedchat\\backend\\routes\\auth.js",
+              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\routes\\auth.js",
+              "RelativeToolTip": "cryptedchat\\backend\\routes\\auth.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-07T08:40:37.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "rsa.js",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\routes\\rsa.js",
+              "RelativeDocumentMoniker": "cryptedchat\\backend\\routes\\rsa.js",
+              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\routes\\rsa.js",
+              "RelativeToolTip": "cryptedchat\\backend\\routes\\rsa.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-08T10:04:56.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "firebase.js",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\js\\firebase.js",
+              "RelativeDocumentMoniker": "cryptedchat\\frontend\\public\\js\\firebase.js",
+              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\js\\firebase.js",
+              "RelativeToolTip": "cryptedchat\\frontend\\public\\js\\firebase.js",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB8AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-07T10:13:13.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "key.pem",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\key.pem",
+              "RelativeDocumentMoniker": "cryptedchat\\frontend\\public\\key.pem",
+              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\key.pem",
+              "RelativeToolTip": "cryptedchat\\frontend\\public\\key.pem",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-08T12:43:12.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "protectedauth.js",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\middleware\\protectedauth.js",
+              "RelativeDocumentMoniker": "cryptedchat\\backend\\middleware\\protectedauth.js",
+              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\middleware\\protectedauth.js",
+              "RelativeToolTip": "cryptedchat\\backend\\middleware\\protectedauth.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-07T07:56:46.094Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 16,
+              "Title": "views.js",
+              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\routes\\views.js",
+              "RelativeDocumentMoniker": "cryptedchat\\backend\\routes\\views.js",
+              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\routes\\views.js",
+              "RelativeToolTip": "cryptedchat\\backend\\routes\\views.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-07T08:40:40.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "chatstyle.css",
               "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\stylesheets\\chatstyle.css",
               "RelativeDocumentMoniker": "cryptedchat\\frontend\\public\\stylesheets\\chatstyle.css",
@@ -304,7 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "style.css",
               "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\frontend\\public\\stylesheets\\style.css",
               "RelativeDocumentMoniker": "cryptedchat\\frontend\\public\\stylesheets\\style.css",
@@ -316,7 +327,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "protected.js",
               "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\routes\\protected.js",
               "RelativeDocumentMoniker": "cryptedchat\\backend\\routes\\protected.js",
@@ -328,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "register.pug",
               "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\views\\auth\\register.pug",
               "RelativeDocumentMoniker": "cryptedchat\\backend\\views\\auth\\register.pug",
@@ -340,7 +351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "viewsController.js",
               "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\controllers\\viewsController.js",
               "RelativeDocumentMoniker": "cryptedchat\\backend\\controllers\\viewsController.js",
@@ -352,7 +363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "layout.pug",
               "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\views\\layout.pug",
               "RelativeDocumentMoniker": "cryptedchat\\backend\\views\\layout.pug",
@@ -364,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "login.pug",
               "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\backend\\views\\auth\\login.pug",
               "RelativeDocumentMoniker": "cryptedchat\\backend\\views\\auth\\login.pug",
@@ -373,18 +384,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
               "WhenOpened": "2025-04-07T07:26:07.159Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "cryptedchat.esproj",
-              "DocumentMoniker": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\cryptedchat.esproj",
-              "RelativeDocumentMoniker": "cryptedchat\\cryptedchat.esproj",
-              "ToolTip": "C:\\Users\\\u0412\u0441\u0451 \u0435\u0449\u0451 \u044F\\source\\repos\\cryptedchat\\cryptedchat\\cryptedchat.esproj",
-              "RelativeToolTip": "cryptedchat\\cryptedchat.esproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-06T12:06:55.372Z"
             }
           ]
         }
