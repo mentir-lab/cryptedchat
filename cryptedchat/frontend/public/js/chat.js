@@ -135,7 +135,7 @@ async function initChat(user) {
     unsubscribeChat = onValue(messagesRef, async (snapshot) => {
         const messagesData = snapshot.val();
         if (!messagesData || !currentKeys) return;
-
+       
         // Для первой загрузки обрабатываем все сообщения
         const messagesToProcess = isInitialLoad
             ? Object.entries(messagesData)
@@ -146,10 +146,14 @@ async function initChat(user) {
             isInitialLoad = false;
             return;
         }
-
+        
         // Декодирование
         const decryptedMessages = await Promise.all(
             messagesToProcess.map(async ([messageId, message]) => {
+                if (messageId === messagesData.id) {
+                    console.log('Сообщение уже обработано:', messagesData.id);
+                    return;
+                }
                 try {
                     const response = await fetch('/api/rsa/decrypt', {
                         method: 'POST',
